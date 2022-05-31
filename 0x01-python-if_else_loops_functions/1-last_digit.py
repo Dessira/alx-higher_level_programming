@@ -11,4 +11,4 @@ if (i < 6) and not(i == 0):
 elif i > 5:
     print(f"Last digit of {number:d} is {i} and is greater than 5")
 else:
-    print(f"Last digit of {number:d} is {w} and is 0")
+    print(f"Last digit of {number:d} is {i} and is 0")
