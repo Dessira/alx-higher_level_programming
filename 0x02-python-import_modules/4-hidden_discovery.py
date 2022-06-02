@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 if __name__ = "__main__":
-    from hidden_4 import *
+    import hidden_4
     contents = dir(hidden_4)
     size = len(contents)
-    for i in range(size):
+    for i in range(0, size):
         if contents[i] != '__':
             print(contents[i])
