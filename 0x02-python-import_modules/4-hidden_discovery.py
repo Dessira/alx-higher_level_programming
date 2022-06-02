@@ -4,5 +4,5 @@ if __name__ = "__main__":
     contents = dir(hidden_4)
     size = len(contents)
     for i in range(0, size):
-        if contents[i] != '__':
+        if '__' not in contents[i]:
             print(contents[i])
