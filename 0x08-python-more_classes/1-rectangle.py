@@ -11,12 +11,12 @@ class Rectangle:
         width (int): Rectangle width
         height (int): Rectangle height
         """
-        self.width = width
-        self.height = height
+        self.__width = width
+        self.__height = height
 
         @property
-        """Set the width, check input and raise errors"""
         def width(self):
+            """Set the width, check input and raise errors"""
             return self.__width
 
         @width.setter
@@ -28,8 +28,8 @@ class Rectangle:
             self.__width = value
 
         @property
-        """Set the height, check input and raise errors"""
         def height(self):
+            """Set the height, check input and raise errors"""
             return self.__height
 
         @height.setter
