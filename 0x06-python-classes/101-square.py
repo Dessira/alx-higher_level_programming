@@ -62,7 +62,7 @@ class Square:
                 print()
 
     def __str__(self):
-        """Printing a Square instance should have the same behavior as my_print()"""
+        """Printing a Square instance with the same behavior as my_print()"""
 
         if self.__size != 0:
             [print("") for i in range(0, self.__position[1])]

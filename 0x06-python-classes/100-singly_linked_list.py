@@ -39,10 +39,11 @@ class Node():
 
     @next_node.setter
     def next_node(self, value):
-        
+
         if type(value) != Node and value is not None:
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
+
 
 class SinglyLinkedList:
     """A class SinglyLinkedList that defines a singly linked list"""
@@ -56,8 +57,8 @@ class SinglyLinkedList:
         """Adds new node into the correct position """
 
         new_node = Node(value)
-        
-        if self.__head == None:
+
+        if self.__head is None:
             new_node.next_node = None
             self.__head = new_node
         elif self.__head.data > value:
@@ -65,7 +66,8 @@ class SinglyLinkedList:
             self.__head = new_node
         else:
             holder = self.__head
-            while (holder.next_node != None and holder.next_node.data < value):
+            while (holder.next_node is not None and
+                    holder.next_node.data < value):
                 holder = holder.next_node
             new_node.next_node = holder.next_node
             holder.next_node = new_node
@@ -75,7 +77,7 @@ class SinglyLinkedList:
 
         holder = self.__head
         val = []
-        while holder != None:
+        while holder is not None:
             val.append(str(holder.data))
             holder = holder.next_node
         return ('\n'.join(val))
