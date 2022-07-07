@@ -1,0 +1,46 @@
+Using class ''MyList''
+----------------------
+
+Import class ``MyList``
+
+	>>> MyList = __import__('1-my_list').MyList
+
+Check Usage:
+
+check if MyList inherits from list:
+	>>> issubclass(MyList, list)
+	True
+
+check for positive numbers:
+	>>> holder = MyList()
+	>>> holder.append(1)
+	>>> holder.append(4)
+	>>> holder.append(2)
+	>>> holder.append(3)
+	>>> print(holder)
+	[1, 4, 2, 3]
+
+check for all negative numbers and zero:
+	>>> holder = MyList()
+	>>> holder.append(-1)
+	>>> holder.append(-4)
+	>>> holder.append(-3)
+	>>> holder.append(0)
+	>>> print(holder)
+	[-1, -4, -3, 0]
+
+check for list order:
+	>>> holder = MyList()
+	>>> holder.append(1)
+	>>> holder.append(4)
+	>>> holder.append(-4)
+	>>> holder.append(0)
+	>>> holder.append(2)
+	>>> holder.print_sorted()
+	[-4, 0, 1, 2, 4]
+
+check for arguments:
+	>>> holder.print_sorted(5)
+	Traceback (most recent call last):
+	...
+	TypeError: print_sorted() takes 1 positional argument but 2 were given
