@@ -23,7 +23,7 @@ class Student:
             attrs (list) = holds attributes to be retrieved
         """
 
-        if type(attrs) != list or attrs == None:
+        if type(attrs) != list or attrs is None:
             return self.__dict__
         else:
             holder = {}
@@ -41,4 +41,4 @@ class Student:
         """
 
         for index in json.keys():
-            self__dict__[index] = json[index]
+            self.__dict__[index] = json[index]
