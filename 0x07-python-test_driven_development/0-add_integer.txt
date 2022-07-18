@@ -1,0 +1,46 @@
+Doctest for ``add_integer``
+
+import function
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Start checks
+
+
+Check using negative and positive numbers:
+	>>> add_integer(100, -2)
+	98
+
+CCheck using two negative numbers:
+	>>> add_integer(-3, -9)
+	-12
+
+Check using one input:
+	>>> add_integer(2)
+	100
+
+Check using two positive numbers:
+	>>> add_integer(1, 2)
+	3
+
+Check using string and negative number:
+	>>> add_integer("chicken", -1)
+	Traceback (most recent call last):
+    	...
+    	TypeError: a must be an integer
+
+Check using None input:
+	>>> add_integer(None)
+    	Traceback (most recent call last):
+    	...
+    	TypeError: a must be an integer
+
+Check using float and int:
+	>>> add_integer(100.3, -2)
+	98
+
+Check two strings:
+	>>> add_integer("icecream", "chicken")
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer

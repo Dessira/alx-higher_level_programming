@@ -1,0 +1,28 @@
+Doctest for ``say_my_name``
+
+First import say_my_name:
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Proper usage:
+	>>> say_my_name("chicken", "wings")
+	My name is chicken wings
+
+Check using one input:
+	>>> say_my_name("Dessira")
+	My name is Dessira 
+
+Check using int:
+	>>> say_my_name("Gretchen", 40)
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
+
+Check using tuple for first name:
+	>>> say_my_name((1, 2), "icecream")
+	Traceback (most recent call last):
+        ...
+	TypeError: first_name must be a string
+
+Check using char input:
+	>>> say_my_name('D', 'B')
+	My name is D B
