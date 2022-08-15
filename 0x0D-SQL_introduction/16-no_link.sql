@@ -1,2 +1,2 @@
 -- Lists all records of the table second_table
-SELECT FROM second_table GROUP BY score WHERE name != NULL ORDER BY score DESC;
+SELECT score, name FROM second_table WHERE name IS NOT NULL ORDER BY score DESC;
