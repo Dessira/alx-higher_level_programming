@@ -4,7 +4,7 @@
 
 import sys
 import urllib.parse
-import urllib.request
+from urllib import request, error
 
 if __name__ == "__main__":
     req = urllib.request.Request(sys.argv[1])
