@@ -7,9 +7,9 @@ if __name__ == "__main__":
     if len(sys.argv) == 1:
         payload = {'q': ""}
     else:
-        payload = {'q': sys[1]}
+        payload = {'q': sys.argv[1]}
 
-    r = requests.post('http://0.0.0.0:5000/search_user', param=payload)
+    r = requests.post('http://0.0.0.0:5000/search_user', data=payload)
     try:
         response = r.json()
         if response == {}:
