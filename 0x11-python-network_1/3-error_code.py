@@ -6,7 +6,7 @@ import sys
 import urllib.parse
 import urllib.request
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     req = urllib.request.Request(sys.argv[1])
     try:
         with urllib.request.urlopen(req) as f:

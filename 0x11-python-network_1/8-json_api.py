@@ -3,8 +3,8 @@
 import sys
 import requests
 
-if __name__ = "__main__":
-    if len(sys.srgv) == 1:
+if __name__ == "__main__":
+    if len(sys.argv) == 1:
         payload = {'q': ""}
     else:
         payload = {'q': sys[2]}
@@ -16,3 +16,5 @@ if __name__ = "__main__":
             print("No result")
         else:
             print("[{}] {}".format(response.get("id"), response.get("name")))
+    except ValueError:
+        print("Not a valid JSON")
