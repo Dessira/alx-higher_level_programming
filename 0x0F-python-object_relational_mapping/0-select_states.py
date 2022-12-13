@@ -8,12 +8,22 @@
 import MySQLdb
 import sys
 
-if __name__ == "__main__":
-    db = MySQLdb.connect(passwd=sys.argv[2], host="localhost", db=sys.argv[3], user=sys.argv[1])
-    c = db.cursor()
-    c.execute("SELECT id, name FROM states ORDER by id ASC")
-    holder = c.fetchall()
-    for x in holder:
-        print(x)
-    db.close
-    c.close
+if __name__ == '__main__':
+    import sys
+    import MySQLdb
+
+    user = sys.argv[1]
+    password = sys.argv[2]
+    db_name = sys.argv[3]
+
+    db = MySQLdb.connect(host="localhost",
+                         user=user,
+                         passwd=password,
+                         db=db_name)
+    cur = db.cursor()
+
+    cur.execute("SELECT * FROM states ORDER BY id")
+    states = cur.fetchall()
+
+    for state in states:
+        print(state)

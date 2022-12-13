@@ -9,18 +9,11 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    if len(sys.argv) == 5:
-        db = MySQLdb.connect(host="localhost", user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
-        c = db.cursor()
-        c.execute("SELECT cities.name\
-                FROM states\
-                INNER JOIN cities ON states.id = cities.state_id\
-                WHERE states.name='{}'\
-                ORDER BY cities.id ASC".format(sys.argv[4]))
-        holder = c.fetchall()
-        cont = []
-        for x in holder:
-            cont.append(x[0])
-        print(", ".join(cont))
-        c.close()
-        db.close()
+    db_con = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
+                             passwd=argv[2], db=argv[3],
+                             charset="utf8")
+    curr = db_con.cursor()
+    curr.execute("SELECT cities.name FROM cities JOIN states ON \
+    cities.state_id = states.id WHERE states.name LIKE %s;", (argv[4],))
+    cities = curr.fetchall()
+    print(", ".join(city[0] for city in cities))

@@ -8,12 +8,18 @@
 import MySQLdb
 import sys
 
-if __name__ == "__main__":
-    db = MySQLdb.connect(host="localhost", user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
-    c = db.cursor()
-    c.execute("SELECT * FROM states WHERE name='{}' ORDER BY id ASC".format(sys.argv[4]))
-    holder = c.fetchall()
-    for x in holder:
-        print(x)
-    c.close()
-    db.close()
+if __name__ == '__main__':
+    user = sys.argv[1]
+    password = sys.argv[2]
+    db_name = sys.argv[3]
+    state_arg = sys.argv[4]
+
+    db = MySQLdb.connect(user=user, passwd=password, db=db_name)
+    cur = db.cursor()
+
+    cur.execute("SELECT * FROM states WHERE name LIKE BINARY '{}' ORDER BY id"
+                .format(state_arg))
+    states = cur.fetchall()
+
+    for state in states:
+        print(state)

@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-"""Script that lists all State objects from the database
-"""
-from sqlalchemy import Column, Integer, String, create_engine
-from sqlalchemy.ext.declarative import declarative_base
-import sessionmaker
+'''a script that lists all State objects
+from the database hbtn_0e_6_usa'''
+import sys
+import sqlalchemy as db
 from model_state import Base, State
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format
@@ -14,6 +15,7 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State).order_by(State.id)
+    states = session.query(State).order_by(
+        State.id).filter(State.name.like('%a%')).all()
     for state in states:
         print('{}: {}'.format(state.id, state.name))
