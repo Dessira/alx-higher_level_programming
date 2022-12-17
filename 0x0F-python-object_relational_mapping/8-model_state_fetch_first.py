@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-'''a script that lists all State objects
-from the database hbtn_0e_6_usa'''
+'''
+a script that lists all State objects
+from the database hbtn_0e_6_usa
+'''
 from ast import IsNot
 import sys
 import sqlalchemy as db
